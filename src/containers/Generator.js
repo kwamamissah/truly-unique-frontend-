@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Grid } from 'semantic-ui-react'
 
 import API from '../backend/data'
+import Title from '../components/Title'
+import Affirmation from '../components/Affirmation'
 
 export default class Generator extends Component {
 
@@ -18,13 +21,13 @@ export default class Generator extends Component {
       this.fetchAffirmations()
     }
 
-
+// {this.state.affirmations.map(data => <li key={data.id}>{data.content}</li>)}
 
   render(){
     console.log(this.state)
     return(
       <div>
-      {this.state.affirmations.map(data => <li key={data.id}>{data.content}</li>)}
+        <Title />
       </div>
     )
   }
