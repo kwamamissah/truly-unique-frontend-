@@ -24,6 +24,8 @@ export default class Login extends Component{
          <input placeholder='Email' />
        </Form.Field>
        <Button type='submit'>Submit</Button>
+       {this.props.login ? <Button onClick={() => this.props.toggleSignup()}>Signup</Button> 
+       : <Button onClick={() => this.props.toggleLogin()}>Login</Button>}
      </Form>
     )
   }

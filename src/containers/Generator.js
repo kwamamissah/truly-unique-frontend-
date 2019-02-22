@@ -43,16 +43,12 @@ toggleSignup= () => {
 
 //check backend code to see logic
 
-// need a login for
-//form on Title page that when getStarted is clicked asked for name and email.
 //once logged in ask if they want last poem/quote
 //give them option based on mood/kind
 //give random quote/poem
 //finish styling so that it looks like it is on a letter.
 //bonus - if quote put on notecard, if poem put on letter
 
-//if login is true then show login component and not welcome. if signup is ture then show
-// signup page and not login. if getStarted is false hide Welcome
 
 
   render(){
@@ -61,9 +57,10 @@ toggleSignup= () => {
       <div>
         <Title getStarted={this.state.getStarted} toggleStart={this.toggleStart} />
         {this.state.getStarted ?
-          <Welcome login={this.state.login} toggleLogin={this.toggleLogin} signup={this.state.signup} toggleSignup={this.toggleSignup} /> 
+          <Welcome login={this.state.login} toggleLogin={this.toggleLogin} signup={this.state.signup} toggleSignup={this.toggleSignup}/>
           : null }
-        {this.state.login || this.state.signup ? <Login login={this.state.login} /> : null }
+        {this.state.login || this.state.signup ? <Login login={this.state.login} toggleLogin={this.toggleLogin} toggleSignup={this.toggleSignup}/>
+         : null }
         <Affirmation words={this.state.affirmations} />
       </div>
     )
