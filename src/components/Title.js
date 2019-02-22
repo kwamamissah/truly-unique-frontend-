@@ -22,15 +22,15 @@ const Title = (props) => {
        <Grid.Column textAlign='center'>
         <Segment raised inverted color='olive'>
          <Header style={{ fontFamily: 'Amatic SC, cursive', fontSize: '40px' }}>Truly Unique (: </Header>
-         <Button animated>
-           <Button.Content visible>Get Started</Button.Content>
-           <Button.Content hidden>(:</Button.Content>
+         <Button onClick={() => props.clickHandler()} >
+           {props.getStarted ? '(:' : 'Get Started'}
          </Button>
+
         </Segment>
        </Grid.Column>
      </Grid.Row>
     </Grid>
-    
+
    <Segment textAlign='center' style={{ fontFamily: 'Indie Flower, cursive', fontSize: '25px' }} >{ today }</Segment>
    </div>
   )
