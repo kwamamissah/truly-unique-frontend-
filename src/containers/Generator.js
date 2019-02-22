@@ -12,7 +12,7 @@ export default class Generator extends Component {
   state = {
     getStarted: false,
     login: false,
-    signup: true,
+    signup: false,
     affirmations: [],
     viewed: []
   }
@@ -30,6 +30,14 @@ export default class Generator extends Component {
     toggleStart = () => {
       this.setState({ getStarted: true})
   }
+
+  toggleLogin = () => {
+    this.setState({ login: true, signup: false})
+}
+
+toggleSignup= () => {
+  this.setState({ login: false, signup: true})
+}
 
 // {this.state.affirmations.map(data => <li key={data.id}>{data.content}</li>)}
 
@@ -51,9 +59,11 @@ export default class Generator extends Component {
 
     return(
       <div>
-        <Title getStarted={this.state.getStarted} clickHandler={this.toggleStart} />
-        {this.state.getStarted ? <Welcome /> : null }
-        {this.state.login ? <Login /> : null }
+        <Title getStarted={this.state.getStarted} toggleStart={this.toggleStart} />
+        {this.state.getStarted ?
+          <Welcome login={this.state.login} toggleLogin={this.toggleLogin} signup={this.state.signup} toggleSignup={this.toggleSignup} /> 
+          : null }
+        {this.state.login || this.state.signup ? <Login login={this.state.login} /> : null }
         <Affirmation words={this.state.affirmations} />
       </div>
     )

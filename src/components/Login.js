@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Header, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 
 export default class Login extends Component{
@@ -14,6 +14,7 @@ export default class Login extends Component{
   render(){
     return(
       <Form>
+        {this.props.login ? <h1>Login</h1> : <h1>Signup</h1>}
        <Form.Field>
          <label>Name</label>
          <input placeholder='Name' />

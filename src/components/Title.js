@@ -22,7 +22,7 @@ const Title = (props) => {
        <Grid.Column textAlign='center'>
         <Segment raised inverted color='olive'>
          <Header style={{ fontFamily: 'Amatic SC, cursive', fontSize: '40px' }}>Truly Unique (: </Header>
-         <Button onClick={() => props.clickHandler()} >
+         <Button onClick={() => props.toggleStart()} >
            {props.getStarted ? '(:' : 'Get Started'}
          </Button>
 
