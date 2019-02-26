@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower";
+
 body {
   margin: 0;
   padding: 0;
@@ -15,20 +17,39 @@ code {
 }
 
 
-  .Form {
-  	background: #3E363F;
+  .ui.form {
+  	background: rgba(91, 159, 230, .1);
+    color: black;
+    border: 2px solid black;
   	border-radius: 2px;
   	padding: 20px;
-  	width: 20vw;
+  	width: 22vw;
     display: inline-block;
   }
 
-input {
-		outline: none;
-		border: 0;
-		color: black;
-		background: transparent;
-		flex: 1 0 auto;
-		font-size: 14px;
-		font-weight: 300;
-}
+  h1 {
+    font-family: 'Amatic SC';
+  }
+
+  .ui.form input:not([type]) {
+    outline: transparent;
+    color: yellow;
+    background: black;
+    font-family: 'Indie Flower';
+    overflow: visible;
+    font-size: 18px;
+    font-weight: 300;
+    height: 6vh;
+  }
+
+  .ui.small.button {
+    background: rgba(104, 118, 132, 0.7);
+    color: #d2d205;
+    font-family: 'Amatic SC';
+    font-size: 16px;
+  }
+
+  .ui.small.button:hover {
+    background: rgba(64, 71, 78, 0.7);
+		transform: scale(1.02);
+	}
