@@ -53,3 +53,16 @@ code {
     background: rgba(64, 71, 78, 0.7);
 		transform: scale(1.02);
 	}
+
+
+  .ui.selection.dropdown {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 300;
+    text-align: center;
+    font-family: 'Indie Flower';
+  }
+
+  .ui.dropdown:not(.button)>.default.text {
+     color: #8da219de;
+  }

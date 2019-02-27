@@ -10,6 +10,8 @@ export default class Login extends Component{
     email: ''
   }
 
+
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -72,7 +74,7 @@ export default class Login extends Component{
         name='email' onChange={(e) => this.handleChange(e)} />
       </Form.Field>
       <Button size='small' type='submit'>Submit</Button>
-      <Button className='bc' size='small' onClick={() => this.props.toggleLogin()}>Login</Button>
+      <Button size='small' onClick={() => this.props.toggleLogin()}>Login</Button>
     </Form>
       }
     </div>
