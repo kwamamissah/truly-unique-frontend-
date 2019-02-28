@@ -31,16 +31,16 @@ export default class Affirmation extends Component{
     let type = this.state.kind.toLowerCase()
     let feeling = this.state.mood.toLowerCase()
 
-    let affirmation = words.filter(x => x.kind === type && x.mood === feeling)
-    let num = this.getRandomInt(affirmation.length)
+    let search = words.filter(x => x.kind === type && x.mood === feeling)
+    let num = this.getRandomInt(search.length)
+    let affirmation = search[num]
+
+
     console.log(affirmation)
-    console.log(num)
-    console.log(affirmation[num])
+    return affirmation
   }
 
   render(){
-
-    this.findWords()
     return (
       <div>
           <Dropdown
@@ -60,7 +60,7 @@ export default class Affirmation extends Component{
           />
         <br/>
 
-        <Button size='big'>Generate</Button>
+        <Button size='big' onClick={() => this.findWords()}>Generate</Button>
       </div>
 
 
