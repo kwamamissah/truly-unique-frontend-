@@ -54,6 +54,10 @@ code {
 		transform: scale(1.02);
 	}
 
+  .ui.big.button {
+    font-family: 'Indie Flower';
+  }
+
 
   .ui.selection.dropdown {
     margin-top: 50px;

@@ -19,10 +19,28 @@ export default class Affirmation extends Component{
     mood: ''
   }
 
-  handleTypeChange = (e, {kind} ) => this.setState({ kind })
-  handleMoodChange = (e, {mood} ) => this.setState({ mood })
+  handleTypeChange = (e, { value } ) => this.setState({ kind: value })
+  handleMoodChange = (e, { value } ) => this.setState({ mood: value })
+
+  getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  findWords = () => {
+    let words = this.props.words
+    let type = this.state.kind.toLowerCase()
+    let feeling = this.state.mood.toLowerCase()
+
+    let affirmation = words.filter(x => x.kind === type && x.mood === feeling)
+    let num = this.getRandomInt(affirmation.length)
+    console.log(affirmation)
+    console.log(num)
+    console.log(affirmation[num])
+  }
 
   render(){
+
+    this.findWords()
     return (
       <div>
           <Dropdown
