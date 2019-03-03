@@ -70,3 +70,7 @@ code {
   .ui.dropdown:not(.button)>.default.text {
      color: #8da219de;
   }
+
+  h1:first-child {
+    margin-top: 50px;
+  }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Dropdown, Button } from 'semantic-ui-react'
 
+import Display from '../components/Display'
+
 const type = [
   { key: 1, text: 'Poem', value: 'Poem' },
   { key: 2, text: 'Quote', value: 'Quote' }
@@ -16,11 +18,13 @@ export default class Affirmation extends Component{
 
   state = {
     kind: '',
-    mood: ''
+    mood: '',
+    isClicked: false
   }
 
   handleTypeChange = (e, { value } ) => this.setState({ kind: value })
   handleMoodChange = (e, { value } ) => this.setState({ mood: value })
+  handleClick = (e) => this.setState({ isClicked: true })
 
   getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
@@ -34,13 +38,13 @@ export default class Affirmation extends Component{
     let search = words.filter(x => x.kind === type && x.mood === feeling)
     let num = this.getRandomInt(search.length)
     let affirmation = search[num]
-
-
-    console.log(affirmation)
     return affirmation
   }
 
   render(){
+
+    let words = this.findWords()
+
     return (
       <div>
           <Dropdown
@@ -60,7 +64,8 @@ export default class Affirmation extends Component{
           />
         <br/>
 
-        <Button size='big' onClick={() => this.findWords()}>Generate</Button>
+        <Button size='big' onClick={() => this.handleClick()}>Generate</Button>
+        {this.state.isClicked ? <Display affirmation={words} /> : null}
       </div>
 
 
